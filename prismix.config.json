@@ -1,0 +1,11 @@
+{
+    "mixers": [
+      {
+          "input": [
+              "src/config/db/base.prisma",
+              "src/config/db/commons.prisma"
+          ],
+          "output": "prisma/schema.prisma"
+      }
+    ]
+  }
