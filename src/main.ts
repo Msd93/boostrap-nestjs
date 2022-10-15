@@ -1,5 +1,6 @@
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import * as cookieParser from 'cookie-parser';
 import { AppModule } from './app.module';
 import { PrismaService } from './modules/persistance/prisma/prisma.service';
 
@@ -20,6 +21,10 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
 
+  // Cookie parser
+  app.use(cookieParser());
+
+  // run app
   await app.listen(3000);
 }
 bootstrap();

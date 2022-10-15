@@ -6,6 +6,7 @@ import { PersistenceModule } from '../persistance/persistence.module';
 @Module({
   imports: [PersistenceModule],
   controllers: [UsersController],
-  providers: [UsersService]
+  providers: [UsersService], 
+  exports: [UsersService]
 })
 export class UsersModule {}
